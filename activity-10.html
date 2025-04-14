@@ -1,64 +1,80 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="activity-10.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    </head>
-    <body>
-        <header>
-            <h1>Basketball Game</h1>
-        </header>
-        <div class="container-fluid text-center">
-            <div class="section1">
-                <div class="row justify-content-center">
-                    <div class="col-6 col-sm-4">
-                        <h2>Add players</h2>
-                        <div class="card">
-                            <h5 class="card-header">
-                                <form id="addForm" action="">
-                                    <p class="add-player-text">Name: 
-                                        <input type="text" name="" id="">
-                                        <input type="button" onclick="addPlayer()" id="add-player-button" value="Add">
-                                    </p>
-                                </form>
-                            </h5>
-                            <div class="card-body">
-                              <h5 class="card-title">Players</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Shot Simulator</title>
+    <link rel="stylesheet" href="activity-10.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fjalla+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fjalla+One&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="gameTitle">Basketball Shot Simulator</h1>
+    </header>
+    <div class="container-fluid text-center">
+        <div class="section1">
+            <div class="row justify-content-center">
+                <!-- Add Players Section -->
+                <div class="col-6 col-sm-4">
+                    <h2 class="titleOne">Add players</h2>
+                    <div class="card">
+                        <h5 class="card-header">
+                            <form id="addForm" action="">
+                                <div class="input-group inputPlayer">
+                                    <input type="text" id="playerName" class="form-control" placeholder="Add Player Name" aria-label="Name of Player" aria-describedby="button-addon2">
+                                    <button onclick="addPlayer()" class="btn btn-outline-secondary" type="button" id="add-player-button">Add</button>
+                                </div>
+                            </form>
+                        </h5>
+                        <div class="card-body">
+                            <div class="row">
+                              <!-- Players column -->
+                              <div class="col-md-6">
+                                <h5 class="card-title">Players</h5>
+                                <p class="card-text" id="playerList">No players yet.</p>
+                                <!-- LIST OF PLAYERS APPEAR HERE -->
+                              </div>
+                          
+                              <!-- Teams column -->
+                              <div class="col-md-6">
+                                <h5 class="card-title">Teams</h5>
+                                <p class="card-text" id="teamList">No teams yet.</p>
+                              </div>
                             </div>
-                        </div>
+                          </div>
                     </div>
-                    <div class="col-6 col-sm-8">
-                        <h2>Play Game</h2>
-                        <div class="card">
-                            <h5 class="card-header">
-                                <p class="add-player-text">Name: 
-                                <input type="text" name="" id=""></p>
-                            </h5>
-                            <div class="card-body">
-                              <h5 class="card-title">Special title treatment</h5>
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                            <h5 class="card-header">
-                                <p class="add-player-text">Name: 
-                                <input type="text" name="" id=""></p>
-                            </h5>
-                        </div>
+                </div>
+
+                <!-- Game Play Section -->
+                <div class="col-6 col-sm-8">
+                    <h2 class="titleOne">Play the Game Here!</h2>
+                    <div class="card">
+                        <h5 class="card-header">
+                            <p class="add-player-text">Game Results</p>
+                        </h5>
+                        <div class="card innerCard">
+                            <h5 class="card-header" id="gameRoundHeader">Ready to play!</h5>
+                            <div class="card-text noteText" id="gameResults">Press play to start.</div>
+                            <button id="playButton" class="btn btn-dark" onclick="startGame()">Play Game</button>
+                            <button id="resetButton" onclick="resetGame()" class="btn btn-danger" style="display: none;">Reset Game</button>
+                        </div> 
                     </div>
                 </div>
             </div>
         </div>
-        
-        <script src="activity-10.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
-    </body>
+    </div>
+
+    <!-- Include JavaScript File -->
+    <script src="activity-10.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
 </html>

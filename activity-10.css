@@ -4,33 +4,190 @@
 	box-sizing: border-box;
 }
 
+header {
+	padding: 30px;
+	background-color: #232323;
+
+	border-bottom: 20px solid #000000;
+}
+
+h1{
+	margin: 0 !important;
+}
+
+.container-fluid {
+	padding: 0 !important;
+}
+
 .section1 {
     width: 100%;
-	min-height: 100%;
-	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/rectangle.png);
-	background-size: cover;
-	background-position: center;
+	min-height: 90.25vh;
+	padding: 20px 60px;
+
+    background-size: cover;      
+    background-repeat: no-repeat; 
+    background-position: center;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/basketball-court.jpg);
 }
 
 .add-player-text {
     margin: 0;
     padding: 0;
 }
+
+.innerCard {
+	margin: 30px;
+	border-radius: 0 !important;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0 !important;
+}
+
+#resetButton {
+	border-radius: 0 !important;
+}
+
+#playButton {
+	border-radius: 0 !important;
+}
+
+.rankingsCard {
+	border-radius: 0 !important;
+}
+
+.gameTitle {
+	font-family: "Bungee Tint", sans-serif;
+  	font-weight: 400;
+  	font-style: normal;
+}
+
+.titleOne{
+	font-family: "Fjalla One", sans-serif;
+  	font-weight: 400;
+  	font-style: normal;
+	text-transform: uppercase;
+	font-size: 50px;
+}
+
+.card {
+	border: 3px solid #a11515 !important;
+}
+
+.card-header {
+	border-bottom: 3px solid #a11515 !important; 
+	background-color: #232323 !important;
+	color: white !important;
+	border-radius: 0 !important;
+}
+
+label,
+input {
+	transition: all 200ms ease;
+}
+
+input {
+	font-size: 24px;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	-webkit-appearance: none;
+	border-radius: 0;
+	padding: 5px 0;
+	&:focus {
+		outline: 0;
+		border-color: coral;
+	}
+	&:placeholder-shown + label {
+		cursor: text;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		transform-origin: left bottom;
+		transform: translate(0, 2.125em) scale(1.5);
+	}
+	&:not(:placeholder-shown) + label,
+	&:focus + label {
+		transform: translate(0, 0) scale(1);
+		cursor: default;
+		color: coral;
+	}
+}
+
+label {
+	max-width: 66.666%;
+	color: #ccc;
+}
+
+::-webkit-input-placeholder {
+	opacity: 0;
+	transition: inherit;
+}
+
+/* CSS */
 #add-player-button {
-    background: #87964A;
-	border: 2px solid #000000;
-	border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 0.25;
+  margin: 0;
+  min-height: 1rem;
+  padding: calc(.475rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
 
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: bold;
-	font-size: 20px;
-	line-height: 29px;
-	/* identical to box height */
-	text-align: center;
-	letter-spacing: 0.02em;
+#add-player-button:hover,
+#add-player-button:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
 
+#add-player-button:hover {
+  transform: translateY(-1px);
+}
+
+#add-player-button:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+.inputPlayer{
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.rankingsCard {
+	border-left: 0 !important;
+	border-right: 0 !important;
+}
+
+.roundCard {
+	border-left: 0 !important;
+	border-right: 0 !important;
+	border-radius: 0 !important;
+}
+
+.titleOne {
 	color: #FFFFFF;
 }
