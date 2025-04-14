@@ -91,7 +91,6 @@ input {
 	font-size: 24px;
 	border: 0;
 	border-bottom: 1px solid #ccc;
-	-webkit-appearance: none;
 	border-radius: 0;
 	padding: 5px 0;
 	&:focus {
@@ -124,7 +123,6 @@ label {
 	transition: inherit;
 }
 
-/* CSS */
 #add-player-button {
   align-items: center;
   background-color: #FFFFFF;
