@@ -55,6 +55,11 @@ function addPlayer() {
     input.value = ""; // Clear input
 }
 
+document.getElementById('addForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    addPlayer();
+});
+
 function generateSuccessRate() {
     return Math.random() * 0.5 + 0.5; // Between 0.5 and 1.0
 }

@@ -28,10 +28,10 @@
                     <h2 class="titleOne">Add players</h2>
                     <div class="card">
                         <h5 class="card-header">
-                            <form id="addForm" action="">
+                            <form onsubmit="return false" id="addForm">
                                 <div class="input-group inputPlayer">
                                     <input type="text" id="playerName" class="form-control" placeholder="Add Player Name" aria-label="Name of Player" aria-describedby="button-addon2">
-                                    <button onclick="addPlayer()" class="btn btn-outline-secondary" type="button" id="add-player-button">Add</button>
+                                    <button class="btn btn-outline-secondary" type="submit" id="add-player-button">Add</button>
                                 </div>
                             </form>
                         </h5>
